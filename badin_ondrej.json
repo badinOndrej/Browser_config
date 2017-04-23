@@ -1,0 +1,26 @@
+
+        [
+        
+            {
+                "name": "AdBlocker",
+                "version": "15.1",
+                "author": "AdBlocker Corp",
+                "description": "Blocks annoying adverts",
+                "active": "true"
+            },
+            {
+                "name": "Flash Player",
+                "version": "24.0",
+                "author": "Adobe Corporation",
+                "description": "Needed to play SWF animations",
+                "active": "false"
+            },
+            {
+                "name": "LinkMaker",
+                "version": "2.5",
+                "author": "Juan Juan",
+                "description": "Parses websites for unmarked links and makes them clickable",
+                "active": "true"
+            }
+        ]
+    

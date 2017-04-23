@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Odkaz na github: https://github.com/badinOndrej/Browser_config -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Browser_config">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Obecne nastaveni -->
+        <xs:element name="settings_general">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:boolean" name="isDefaultBrowser"/>
+              <xs:element type="lang" name="interfaceLang"/>
+              <xs:element name="windowCoords">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:short" name="x"/>
+                      <xs:attribute type="xs:short" name="y"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="windowSize">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:short" name="w"/>
+                      <xs:attribute type="xs:short" name="h"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:boolean" name="maximized"/>
+              <xs:element type="dispOnStart" name="onStart"/>
+              <xs:element type="xs:anyURI" name="homepage"/>
+              <xs:element type="xs:string" name="default_downloadDir"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Nastaveni zobrazeni stranek -->
+        <xs:element name="default_web_appearance">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="default_codepage"/>
+              <xs:element name="default_color">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="colorHex" name="bkg"/>
+                      <xs:attribute type="colorHex" name="text"/>
+                      <xs:attribute type="colorHex" name="link"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="default_font_normal">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="typeface"/>
+                      <xs:attribute type="xs:byte" name="size"/>
+                      <xs:attribute type="fontStyle" name="style"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="default_font_header">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="typeface"/>
+                      <xs:attribute type="xs:byte" name="size"/>
+                      <xs:attribute type="xs:string" name="style"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="default_font_link">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="typeface"/>
+                      <xs:attribute type="xs:byte" name="size"/>
+                      <xs:attribute type="xs:string" name="style"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Nastaveni soukromi a bezpecnosti -->
+        <xs:element name="privacy_security">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="embeddings">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" name="javascript"/>
+                    <xs:element type="xs:boolean" name="iframe"/>
+                    <xs:element type="xs:boolean" name="audio"/>
+                    <xs:element type="xs:boolean" name="video"/>
+                    <xs:element type="xs:boolean" name="fontface"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:boolean" name="rememberCredentials"/>
+              <xs:element type="xs:boolean" name="dangerousWebWarning"/>
+              <xs:element name="exceptions">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="exception" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:anyURI" name="site" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:boolean" name="keepHistory"/>
+              <xs:element name="eraseHistoryAfter">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:byte" name="period"/>
+                      <xs:attribute type="timeUnit" name="unit"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:boolean" name="doNotTrack"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Instalovane doplnky -->
+        <xs:element name="installed_plugins">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="plugin" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:float" name="version"/>
+                    <xs:element type="xs:string" name="author"/>
+                    <xs:element type="xs:string" name="description"/>
+                    <xs:element type="xs:boolean" name="active"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Nastaveni synchronizace s cloudem -->
+        <xs:element name="sync_settings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:boolean" name="synchronize"/>
+              <xs:element type="xs:string" name="username"/>
+              <xs:element type="xs:string" name="passwordHash"/>
+              <xs:element type="xs:boolean" name="synchronizeBookmarks"/>
+              <xs:element type="xs:boolean" name="synchronizeHistory"/>
+              <xs:element type="xs:boolean" name="synchronizeCredentials"/>
+              <xs:element type="xs:boolean" name="synchronizePlugins"/>
+              <xs:element type="xs:boolean" name="synchronizeSettings"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Zalozky -->
+        <xs:element name="bookmarks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mark" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:string" name="inFolder"/>
+                    <xs:element type="xs:anyURI" name="site"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Omezani casove jednotky -->
+  <xs:simpleType name="timeUnit">
+      <xs:restriction base="xs:string">
+          <xs:enumeration value="hour" />
+          <xs:enumeration value="day" />
+          <xs:enumeration value="week" />
+          <xs:enumeration value="month" />
+      </xs:restriction>
+  </xs:simpleType>
+  <!-- Omezeni nastaveni zobrazeni stranky pri startu -->
+  <xs:simpleType name="dispOnStart">
+      <xs:restriction base="xs:string">
+          <xs:enumeration value="showHomePage" />
+          <xs:enumeration value="showBlankPage" />
+          <xs:enumeration value="showPreviousSession" />
+      </xs:restriction>
+  </xs:simpleType>
+  <!-- Omezeni zadani HTML hex kodu barvy -->
+  <xs:simpleType name="colorHex">
+      <xs:restriction base="xs:string">
+          <xs:pattern value="[#][a-fA-F0-9]{6}"/>
+      </xs:restriction>
+  </xs:simpleType>
+  <!-- Omezeni jazyku rozhrani -->
+  <xs:simpleType name="lang">
+      <xs:restriction base="xs:string">
+          <xs:pattern value="en_GB|en_US|fr_FR|de_DE|it_IT|cs_CZ|pl_PL" />
+      </xs:restriction>
+  </xs:simpleType>
+  <!-- Omezeni stylu rezu pisma -->
+  <xs:simpleType name="fontStyle">
+      <xs:restriction base="xs:string">
+          <xs:pattern value="(normal|bold|underlined|italic)+" />
+      </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

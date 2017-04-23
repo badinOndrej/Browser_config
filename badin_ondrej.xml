@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Odkaz na github: https://github.com/badinOndrej/Browser_config -->
+<?xml-stylesheet type="text/xsl" href="badin_ondrej.xsl"?>
+<!-- Nastaveni weboveho prohlizece -->
+<Browser_config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNamespaceSchemaLocation="badin_ondrej.xsd">
+
+<!-- Obecne nastaveni -->
+<settings_general>
+  <isDefaultBrowser>true</isDefaultBrowser>
+  <interfaceLang>cs_CZ</interfaceLang>
+  <windowCoords x="140" y="150" />
+  <windowSize w="920" h="600" />
+  <maximized>true</maximized>
+  <onStart>showHomePage</onStart>
+  <homepage>http://www.homepage.info</homepage>
+  <default_downloadDir>file://C:/Users/karelNovak/Downloads</default_downloadDir>
+</settings_general>
+
+<!-- Nastaveni zobrazeni stranek -->
+<default_web_appearance>
+  <default_codepage>UTF-8</default_codepage>
+  <default_color bkg="#ffffff" text="#000000" link="#0000ff" />
+  <default_font_normal typeface="Arial" size="10" style="normal" />
+  <default_font_header typeface="Arial" size="18" style="bold" />
+  <default_font_link typeface="Arial" size="10" style="bold underlined" />
+</default_web_appearance>
+
+<!-- Nastaveni soukromi a bezpecnosti -->
+<privacy_security>
+  <!-- bezpecnost -->
+  <embeddings>
+    <javascript>false</javascript>
+    <iframe>true</iframe>
+    <audio>true</audio>
+    <video>true</video>
+    <fontface>true</fontface>
+  </embeddings>
+  <rememberCredentials>false</rememberCredentials>
+  <dangerousWebWarning>true</dangerousWebWarning>
+  <exceptions>
+    <exception site="http://www.page1.com" />
+    <exception site="http://www.page2.com" />  
+  </exceptions>
+  <!-- soukromi -->
+  <keepHistory>true</keepHistory>
+  <eraseHistoryAfter period="30" unit="day" />
+  <doNotTrack>true</doNotTrack>
+</privacy_security>
+
+<!-- Instalovane doplnky -->
+<installed_plugins>
+  <plugin>
+    <name>AdBlocker</name>
+    <version>15.1</version>
+    <author>AdBlocker Corp</author>
+    <description>Blocks annoying adverts</description>
+    <active>true</active>  
+  </plugin>
+  <plugin>
+    <name>Flash Player</name>
+    <version>24.0</version>
+    <author>Adobe Corporation</author>
+    <description>Needed to play SWF animations</description>
+    <active>false</active>  
+  </plugin>
+  <plugin>
+    <name>LinkMaker</name>
+    <version>2.5</version>
+    <author>Juan Juan</author>
+    <description>Parses websites for unmarked links and makes them clickable</description>
+    <active>true</active>  
+  </plugin>
+</installed_plugins>
+
+<!-- Nastaveni synchronizace s cloudem -->
+<sync_settings>
+  <synchronize>true</synchronize>
+  <username>karelNovak1</username>
+  <passwordHash>8929f11b00a7c0328eb8e0176f3b55a38c1d602e7344f1b0bcc9a7aa1defc074</passwordHash>
+  <synchronizeBookmarks>true</synchronizeBookmarks>
+  <synchronizeHistory>false</synchronizeHistory>
+  <synchronizeCredentials>false</synchronizeCredentials>
+  <synchronizePlugins>true</synchronizePlugins>
+  <synchronizeSettings>true</synchronizeSettings>
+</sync_settings>
+
+<!-- Zalozky -->
+<bookmarks>
+  <mark>
+    <name>Page 1</name>
+    <inFolder>$bookmarks</inFolder>
+    <site>http://www.page1.com</site>
+  </mark>
+  <mark>
+    <name>Page 2</name>
+    <inFolder>$bookmarks/zabava</inFolder>
+    <site>http://www.page2.com</site>
+  </mark>
+  <mark>
+    <name>Page 3</name>
+    <inFolder>$bookmarks/zabava</inFolder>
+    <site>http://www.page3.com</site>
+  </mark>
+  <mark>
+    <name>Page 4</name>
+    <inFolder>$bookmarks</inFolder>
+    <site>http://www.page4.com</site>
+  </mark>
+  <mark>
+    <name>Page 5</name>
+    <inFolder>$bookmarks</inFolder>
+    <site>http://www.page5.com</site>
+  </mark>
+</bookmarks>
+
+</Browser_config>
