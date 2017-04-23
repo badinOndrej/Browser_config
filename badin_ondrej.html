@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!-- Odkaz na github: https://github.com/badinOndrej/Browser_config -->
+<html>
+  <head>
+    <title>Dokumentace</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <header>
+      <h1>Značkovací jazyky</h1>
+    </header>
+    <main>
+      <article>
+        <header>
+          <h2>Dokumentace projektu</h2>
+          <h3>Navigace</h3>
+          <ul>
+            <li><a href="#uvod">Úvod</a></li>
+            <li><a href="#metd">Metodika</a></li>
+            <li><a href="#elat">Popis elementů a atributů</a></li>
+            <li><a href="#trns">Popis transformace</a></li>
+            <li><a href="#zavr">Závěr</a></li>
+          </ul>
+        </header>
+        <section>
+          <h3 id="uvod">Úvod</h3>
+          <p>
+              Jako téma semestrální práce jsem si zvolil konfiguraci webového prohlížeče.
+              Téma jsem si vybral proto, že webové prohlížeče jsou stále aktuální,
+              v našich životech stále více důežité a přišlo mi zajímavé zjistit,
+              co všechno by mohla konfigurace takového přohlížeče obsahovat.
+          </p>
+          <p>
+              XML soubor slouží k uložení základní konfigurace prohlížeče,
+              nastavení bezpečnosti a soukromí, synchronizace s cloudem, 
+              správě doplňků a záložek.
+          </p>
+        </section>
+        <section>
+          <h3 id="metd">Metodika</h3>
+          <h4>Použitý software</h4>
+          <p>
+              Pro tvorbu projektu jsem použil programy <a href="http://www.pspad.com/cz/">PSPad</a>
+              a <a href="https://netbeans.org/">NetBeans IDE</a>
+              a webový prohlížeč <a href="https://www.mozilla.org/cs/firefox/new/">Mozilla Firefox</a>.
+          </p>
+          <h4>Využité webové stránky</h4>
+          <p>
+              Informace jsem nalezl převážně na stránkách <a href="https://www.w3schools.com/">W3Schools</a>,
+              validaci jsem provedl přes <a href="https://validator.w3.org/">oficální validátor W3</a>
+          </p>
+        </section>
+        <section>
+          <h3 id="elat">Popis elementů a atributů</h3>
+          <h4>Použité elementy</h4>
+          <table>
+              <tr>
+                  <th>Název</th>
+                  <th>Popis</th>
+                  <th>Omezení</th>
+              </tr>
+              <tr>
+                  <td>settings_general</td>
+                  <td>Obaluje obecná nastavení</td>
+                  <td>Bez omezení</td>
+              </tr>
+              <tr>
+                  <td>isDefaultBrowser</td>
+                  <td>Určuje, zda se má provádět kontrola, jestli je prohlížeč výchozí</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>interfaceLang</td>
+                  <td>Určuje jazyk prostředí</td>
+                  <td>en_GB|en_US|fr_FR|de_DE|it_IT|cs_CZ|pl_PL</td>
+              </tr>
+              <tr>
+                  <td>windowCoords</td>
+                  <td>Určuje souřadnice okna</td>
+                  <td>Nepárový tag, určeno atributy</td>
+              </tr>
+              <tr>
+                  <td>windowSize</td>
+                  <td>Určuje velikost okna</td>
+                  <td>Nepárový tag, určeno atributy</td>
+              </tr>
+              <tr>
+                  <td>isMaximized</td>
+                  <td>Určuje, zda se má prohlížeč spouštět maximalizovaný</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>onStart</td>
+                  <td>Určuje akci, která má nastat po spuštění prohlížeče</td>
+                  <td>showHomePage|showBlankPage|showPreviousSession</td>
+              </tr>
+              <tr>
+                  <td>homepage</td>
+                  <td>Určuje domovskou stránku</td>
+                  <td>URL</td>
+              </tr>
+              <tr>
+                  <td>default_downloadDir</td>
+                  <td>Určuje složku, do které se mají stahovat soubory</td>
+                  <td>string</td>
+              </tr>
+              <tr>
+                  <td>default_web_appearance</td>
+                  <td>Obaluje nastavení výchozího zobrazení webových stránek</td>
+                  <td>Bez omezení</td>
+              </tr>
+              <tr>
+                  <td>default_codepage</td>
+                  <td>Určuje výchozí kódovou stránku</td>
+                  <td>string</td>
+              </tr>
+              <tr>
+                  <td>default_color</td>
+                  <td>Určuje výchozí barvu pozadí, textu a odkazů</td>
+                  <td>Nepárový tag, určeno atributy</td>
+              </tr>
+              <tr>
+                  <td>default_font_normal</td>
+                  <td>Určuje výchozí řez písma těla textu</td>
+                  <td>Nepárový tag, určeno atributy</td>
+              </tr>
+              <tr>
+                  <td>default_font_header</td>
+                  <td>Určuje výchozí řez písma nadpisů</td>
+                  <td>Nepárový tag, určeno atributy</td>
+              </tr>
+              <tr>
+                  <td>default_font_link</td>
+                  <td>Určuje výchozí řez písma odkazů</td>
+                  <td>Nepárový tag, určeno atributy</td>
+              </tr>
+              <tr>
+                  <td>privacy_security</td>
+                  <td>Obaluje nastavení soukromí a bezpečnosti</td>
+                  <td>Bez omezení</td>
+              </tr>
+              <tr>
+                  <td>embeddings</td>
+                  <td>Obaluje nastavení povolení vložených prvků</td>
+                  <td>Bez omezení</td>
+              </tr>
+              <tr>
+                  <td>javascript</td>
+                  <td>Určuje zda je povolen javascript</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>iframe</td>
+                  <td>Určuje zda jsou povolany iframy</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>audio</td>
+                  <td>Určuje zda jsou povoleny HTML5 audio tagy</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>video</td>
+                  <td>Určuje zda jsou povoleny HTML5 video tagy</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>fontface</td>
+                  <td>Určuje zda je povolen @font-face</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>rememberCredentials</td>
+                  <td>Určuje jestli si má prohlížeč pamatovat přihlašovací údaje</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>dangerousWebWarning</td>
+                  <td>Určuje zda má prohlížeč varovat před potenciálně nebezpečnými weby</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>exceptions</td>
+                  <td>Obal pro výjimky ze seznamu nebezpečných webů</td>
+                  <td>Bez omezení</td>
+              </tr>
+              <tr>
+                  <td>exception</td>
+                  <td>Konkrétní výjimka</td>
+                  <td>Nepárový tag, určeno atributy</td>
+              </tr>
+              <tr>
+                  <td>keepHistory</td>
+                  <td>Určuje jestli má prohlížeč uchovávat historii</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>eraseHistoryAfter</td>
+                  <td>Za jakou dobu se má historie vymazat</td>
+                  <td>Nepárový tag, určeno atributy</td>
+              </tr>
+              <tr>
+                  <td>doNotTrack</td>
+                  <td>Určuje jestli má prohlížeč blokovat pokusy stránek o sledování</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>installed_plugins</td>
+                  <td>Obaluje nastavení instalovaných pluginů</td>
+                  <td>Bez omezení</td>
+              </tr>
+              <tr>
+                  <td>plugin</td>
+                  <td>Obaluje konkrétní plugin</td>
+                  <td>Bez omezení</td>
+              </tr>
+              <tr>
+                  <td>name</td>
+                  <td>Název pluginu</td>
+                  <td>string</td>
+              </tr>
+              <tr>
+                  <td>version</td>
+                  <td>Verze pluginu</td>
+                  <td>float</td>
+              </tr>
+              <tr>
+                  <td>author</td>
+                  <td>Autor pluginu</td>
+                  <td>string</td>
+              </tr>
+              <tr>
+                  <td>description</td>
+                  <td>Popis pluginu</td>
+                  <td>string</td>
+              </tr>
+              <tr>
+                  <td>active</td>
+                  <td>Určuje zda je plugin momentálně aktivní</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>sync_settings</td>
+                  <td>Obaluje nastavení synchronizace prohlížeče s cloudem</td>
+                  <td>Bez omezení</td>
+              </tr>
+              <tr>
+                  <td>synchronize</td>
+                  <td>Uručje zda má docházet k synchronizaci</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>username</td>
+                  <td>Uživatelské jméno do cloudu</td>
+                  <td>string</td>
+              </tr>
+              <tr>
+                  <td>passwordHash</td>
+                  <td>Heslo do cloudu, zahashované</td>
+                  <td>string</td>
+              </tr>
+              <tr>
+                  <td>synchronizeBookmarks</td>
+                  <td>Určuje jestli se mají synchronizovat záložky</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>synchronizeHistory</td>
+                  <td>Uručje jestli se má synchronizovat historie</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>synchronizeCredentials</td>
+                  <td>Určuje jestli se mají synchronizovat přihlašovací údaje</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>synchronizePlugins</td>
+                  <td>Určuje zda se mají synchronizovat nainstalované pluginy</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>synchronizeSettings</td>
+                  <td>Určuje zda se má synchronizovat nastavení</td>
+                  <td>true|false</td>
+              </tr>
+              <tr>
+                  <td>bookmarks</td>
+                  <td>Obaluje záložky</td>
+                  <td>Bez omezení</td>
+              </tr>
+              <tr>
+                  <td>mark</td>
+                  <td>Obaluje konkrétní záložku</td>
+                  <td>Bez omezení</td>
+              </tr>
+              <tr>
+                  <td>name</td>
+                  <td>Název záložky</td>
+                  <td>string</td>
+              </tr>
+              <tr>
+                  <td>inFloder</td>
+                  <td>Složka ve které je v rámci seznamu záložek uložena</td>
+                  <td>string</td>
+              </tr>
+              <tr>
+                  <td>site</td>
+                  <td>Adresa stránky na kterou odkazuje</td>
+                  <td>URL</td>
+              </tr>
+          </table>
+          <h4>Použité atributy</h4>
+          <table>
+            <tr>
+                <th>Název</th>
+                <th>Popis</th>
+                <th>Omezení</th>
+                <th>Použit v elementech</th>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>Souřadnice okna v ose x</td>
+                <td>short</td>
+                <td>windowCoords</td>
+            </tr>
+            <tr>
+                  <td>y</td>
+                  <td>Souřadnice okna v ose y</td>
+                  <td>short</td>
+                  <td>windowCoords</td>
+            </tr>
+            <tr>
+                  <td>w</td>
+                  <td>Šířka okna</td>
+                  <td>short</td>
+                  <td>windowSize</td>
+            </tr>
+            <tr>
+                  <td>h</td>
+                  <td>Výška okna</td>
+                  <td>short</td>
+                  <td>windowSize</td>
+            </tr>
+            <tr>
+                  <td>bkg</td>
+                  <td>Výchozí barva pozadí stránky</td>
+                  <td>#[a-fA-F0-9]{6}</td>
+                  <td>default_color</td>
+            </tr>
+            <tr>
+                  <td>text</td>
+                  <td>Výchozí barva textu stránka</td>
+                  <td>#[a-fA-F0-9]{6}</td>
+                  <td>default_color</td>
+            </tr>
+            <tr>
+                  <td>link</td>
+                  <td>Výchozí barva odkazů na stránce</td>
+                  <td>#[a-fA-F0-9]{6}</td>
+                  <td>default_color</td>
+            </tr>
+            <tr>
+                <td>typeface</td>
+                <td>Řez písma</td>
+                <td>string</td>
+                <td>default_font_normal, default_font_header, default_font_link</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>Velikost písma</td>
+                <td>byte</td>
+                <td>default_font_normal, default_font_header, default_font_link</td>
+            </tr>
+            <tr>
+                <td>style</td>
+                <td>Styl písma</td>
+                <td>(normal|bold|italic|underlined)+</td>
+                <td>default_font_normal, default_font_header, default_font_link</td>
+            </tr>
+            <tr>
+                <td>site</td>
+                <td>Adresa stránky ve výjimce</td>
+                <td>URL</td>
+                <td>exception</td>
+            </tr>
+            <tr>
+                <td>period</td>
+                <td>Délka časového úseku</td>
+                <td>byte</td>
+                <td>eraseHistoryAfter</td>
+            </tr>
+            <tr>
+                <td>unit</td>
+                <td>Jednotka délky časového úseku</td>
+                <td>hour|day|week|month</td>
+                <td>eraseHistoryAfter</td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <h3 id="trns">Popis transformace</h3>
+          <p>
+              Transformace pomocí <code>for-each</code> cyclu vybere a pomocí <strong>JSON</strong>
+              odešle informace o všech aktivních doplňcích, tedy o těch, které mají
+              element <code>&lt;active&gt;true&lt;/active&gt;</code>.
+              Obsahuje test na zjišetění, zda byl údaj poslední, podle kterého v případě, že nebyl, doplní
+              čárku pro správnost syntaxe.
+          </p>
+        </section>
+        <section>
+          <h3 id="zavr">Závěr</h3>
+          <p>
+              Při tvorbě práce jsem si vyzkoušel práci z jazykem <strong>XML</strong>, který možná využiji i v budoucnu.
+              Při větším rozsahu práce a při tvorbě práce mimo školní prostředí by bylo dobré vhodně upravit omezení jednotlivých elementů
+              pro zabezpečení správnosti dat a upravit složení elementů tak, aby XML konfigurace neobsahovala citlivá data.
+          </p>
+        </section>
+      </article>
+    </main>
+    <footer>Ondřej Badín, xbado001 | ČZU v Praze, 2017</footer>
+  </body>
+</html>
